@@ -1,16 +1,350 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cygnus</title>
-    <link href="/style/style.css" rel="stylesheet"> 
+    <link href="/style/style.css" rel="stylesheet">
 </head>
+
 <body>
 
 
-    
+    <BODY>
+        <TABLE style="HEIGHT: 100%; WIDTH: 100%" cellSpacing=0>
+            <COLGROUP>
+                <COL style="WIDTH: 100%">
+            <TBODY>
+                <TR>
+                    <TD style="HEIGHT: 50px; BACKGROUND: url(../images/bg_top.jpg) no-repeat 100% 0%">
+                        <DIV style="WIDTH: 740px">
+                            <!-- upper menu bar -->
+                            <SCRIPT language=JavaScript>
+                                function MensagePopUp() {
+                                    window.open(sURLRoot + 'System/tools/popUpSrv.asp', '', 'top=100,left=100,height=300,width=400,resizable=yes,scrollbars=yes');
+                                }
+
+                                function cambia_rol(rol_info) {
+                                    var info = rol_info.split("|")
+                                    var oForm = createForm(sURLRoot + "home/" + info[0]);
+                                    setFormField(oForm, "rol_elegido", info[1]);
+                                
+                                    oForm.submit();
+
+                                }
+
+                                (function () {
+                                    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                                    link.type = 'image/x-icon';
+                                    link.rel = 'shortcut icon';
+                                    link.href = '/cygnus/favicon.ico';
+                                    document.getElementsByTagName('head')[0].appendChild(link);
+                                })();
+                            </SCRIPT>
+
+                            <TABLE
+                                style="HEIGHT: 32px; WIDTH: 100%; COLOR: steelblue; MARGIN: 0px; LETTER-SPACING: -1px">
+                                <TBODY>
+                                    <TR>
+                                        <TD style="VERTICAL-ALIGN: bottom" noWrap><IMG src="/cygnus/logo_top.jpg"></TD>
+                                        <TABLE
+                                            style="HEIGHT: 26px; WIDTH: 100%; BACKGROUND: steelblue; COLOR: lightsteelblue"
+                                            cellSpacing=4>
+                                            <TBODY>
+                                                <TR>
+                                                    <TD style="VERTICAL-ALIGN: middle; TEXT-ALIGN: left"><IMG
+                                                            style="VERTICAL-ALIGN: middle"
+                                                            src="/cygnus/images/menu_home.gif"> <A
+                                                            href="/cygnus/home/controlsede.asp">
+                                                            <FONT color=white>&nbsp;home</FONT>
+                                                        </A> &nbsp; <A href="/cygnus/home/home_tesoreria.asp">
+                                                            <FONT color=white>&nbsp;Tesorería</FONT>
+                                                        </A> <A href="/cygnus/home/home_nuepost.asp">
+                                                            <FONT color=white>&nbsp;Nuevos Postulantes</FONT>
+                                                        </A> <A href="/cygnus/home/home_alumnos.asp">
+                                                            <FONT color=white>&nbsp;Alumnado</FONT>
+                                                        </A>
+                                                        <DIV></DIV>
+                                                        <DIV
+                                                            style="FONT-SIZE: 1.5em; TEXT-DECORATION: blink; VERTICAL-ALIGN: middle; FLOAT: right; FONT-WEIGHT: bold; TEXT-ALIGN: right">
+                                                            <A style="TEXT-DECORATION: blink; COLOR: white"
+                                                                href="/cygnus/system/notas/notaList.asp">33 notas
+                                                                requieren de su acción. </A></DIV>
+                                                    </TD>
+                                                </TR>
+                                            </TBODY>
+                                        </TABLE><!-- main menu bar -->
+                        </DIV>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD style="VERTICAL-ALIGN: top; PADDING-LEFT: 10px">
+                        <DIV id=printableArea style="WIDTH: 730px">
+                            <!-- PAGE CONTENTS BELOW -->
+                            <!-- **************************************************************************************************** -->
+                            <!-- header -->
+                            <TABLE
+                                style="MARGIN-BOTTOM: 6px; HEIGHT: 30px; WIDTH: 730px; MARGIN-TOP: 6px; BORDER-BOTTOM: silver 2px dotted"
+                                cellSpacing=0 cellPadding=0>
+                                <TBODY>
+                                    <TR>
+                                        <TD style="FONT-SIZE: medium" noWrap>
+                                            <!-- Título --><B>Gestión Académica - Gestión de Alumnos</B>
+                                        </TD>
+                                        <TD style="WIDTH: 120px; TEXT-ALIGN: right" noWrap>
+                                            <!-- span class="mimic" style="font-weight: bold;"><img SRC="../../images/button_back.gif" style="vertical-align: middle;" WIDTH="10" HEIGHT="10">&nbsp;volver</span>&nbsp;|&nbsp; -->
+                                            <!-- span onclick="windProc( 'new' );" class="mimic" style="font-weight: bold;">* nuevo</span>&nbsp;|&nbsp; -->
+                                        </TD>
+                                    </TR>
+                                </TBODY>
+                            </TABLE><!-- End Header -->
+                            <!-- Messages & Notes -->
+                            <!-- Messages & Notes -->
+                            <TABLE style="WIDTH: 100%" cellSpacing=6 cellPadding=6>
+                                <COLGROUP>
+                                    <COL style="WIDTH: 16px">
+                                    <COL>
+                                </COLGROUP>
+                                <TBODY style="VERTICAL-ALIGN: top"></TBODY>
+                            </TABLE><!-- End Messages & Notes --><BR>
+                            <TABLE cellSpacing=3 cellPadding=6 width="100%">
+                                <TBODY style="BACKGROUND: #f5f5f5">
+                                    <TR style="VERTICAL-ALIGN: top">
+                                        <TD
+                                            style="BORDER-TOP: silver 1px solid; BORDER-RIGHT: silver 1px solid; WIDTH: 33%; BORDER-BOTTOM: silver 1px solid; PADDING-LEFT: 5px; BORDER-LEFT: silver 1px solid; PADDING-RIGHT: 10px">
+                                            <H3>Alumnos y Profesores</H3>
+                                            <TABLE style="CURSOR: hand; WIDTH: 100%" cellSpacing=0>
+                                                <TBODY>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='../system/alumnado/Alumno/AlumnoList.asp?esAlumno=1&amp;redirect=/cygnus/home/home_alumnos.asp'"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/images/icon-users3-32x32.gif"
+                                                                width=32 height=32></TD>
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            vAlign=middle><B>
+                                                                <FONT color=steelblue>Listar Alumnos Inscriptos</FONT>
+                                                            </B> </TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='/cygnus/system/alumnado/profesor/ProfesorList.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/listado profesores.png" width=32
+                                                                height=32></TD>
+                                                        <TD
+                                                            style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px">
+                                                            <B>
+                                                                <FONT color=steelblue>Listado de Profesores</FONT>
+                                                            </B> <BR><!--							<p>asignables a las <b>Mesas</b></p>-->
+                                                        </TD>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='../system/notas/notaList.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" style=>
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/Notas de alumnos.gif" width=32
+                                                                height=32></TD>
+                                                        <TD
+                                                            style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px">
+                                                            <B>
+                                                                <FONT color=steelblue>Notas de Alumnos</FONT>
+                                                            </B><BR>Listado de notas presentadas por los alumnos </TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='/cygnus/system/tools/cfg_Parametros.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='#f0f0f0'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/Administrar parámetros.gif"
+                                                                width=32 height=32></TD>
+                                                        <TD
+                                                            style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px">
+                                                            <B>
+                                                                <FONT color=steelblue>Administrar Parametros</FONT>
+                                                            </B> <BR>
+                                                            <P>Esta herramienta le permite modificar parametros del
+                                                                sistema.</P>
+                                                        </TD>
+                                                    </TR>
+                                                </TBODY>
+                                            </TABLE><BR>
+                                        </TD>
+                                        <TD
+                                            style="BORDER-TOP: silver 1px solid; BORDER-RIGHT: silver 1px solid; WIDTH: 33%; BORDER-BOTTOM: silver 1px solid; PADDING-LEFT: 5px; BORDER-LEFT: silver 1px solid; PADDING-RIGHT: 10px">
+                                            <H3>Cursado</H3>
+                                            <TABLE style="CURSOR: hand; WIDTH: 100%" cellSpacing=0>
+                                                <TBODY>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='/cygnus/system/alumnado/Comision/ComisionList.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/Administrar comisiones.gif"
+                                                                width=32 height=32></TD>
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            vAlign=middle><B>
+                                                                <FONT color=steelblue>Administrar Comisiones</FONT>
+                                                            </B></A> </TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='/cygnus/system/alumnado/cursado/cmd_cargarRegularidad.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/Registrar regularidades.png">
+                                                        </TD>
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            vAlign=middle><B>
+                                                                <FONT color=steelblue>Registrar Regularidades</FONT>
+                                                            </B></A> </TD>
+                                                    </TR>
+                                                </TBODY>
+                                            </TABLE>
+                                        </TD>
+                                        
+                                    </TR>
+                                </TBODY>
+                            </TABLE>
+                            <TABLE cellSpacing=3 cellPadding=6 width="100%">
+                                <TBODY style="BACKGROUND: #f5f5f5">
+                                    <TR style="VERTICAL-ALIGN: top">
+                                        <TD
+                                            style="BORDER-TOP: silver 1px solid; BORDER-RIGHT: silver 1px solid; WIDTH: 33%; BORDER-BOTTOM: silver 1px solid; PADDING-LEFT: 10px; BORDER-LEFT: silver 1px solid; PADDING-RIGHT: 10px">
+                                            <H3>Mesas de Examen</H3>
+                                            <TABLE style="CURSOR: hand; WIDTH: 100%" cellSpacing=0>
+                                                <TBODY>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='../system/alumnado/examen/cmd_InscribirExamen.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG
+                                                                src="/cygnus/inscribir a examenes finalkes.gif" width=32
+                                                                height=32></TD>
+                                                        <TD
+                                                            style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px">
+                                                            <B>
+                                                                <FONT color=steelblue>Inscribir a Exámenes finales
+                                                                </FONT>
+                                                            </B><BR></TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='../system/alumnado/mesa/mesaList.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/Notas de alumnos.gif" width=32
+                                                                height=32></TD>
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            vAlign=middle><B>
+                                                                <FONT color=steelblue>Administrar Mesas</FONT>
+                                                            </B> <BR>
+                                                            <P></P>
+                                                        </TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='../system/alumnado/examen/cmd_precargarExamen.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/listado profesores.png" width=32
+                                                                height=32></TD>
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            vAlign=middle><B>
+                                                                <FONT color=steelblue>Registrar Exámenes</FONT>
+                                                            </B> <BR>
+                                                            <P></P>
+                                                        </TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        onclick="location='/cygnus/system/alumnado/examen/examenList.asp?redirect=' + location"
+                                                        onmousemove="this.style.backgroundColor='gainsboro'" class=mimic
+                                                        style="VERTICAL-ALIGN: top">
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/Administrar parámetros.gif"
+                                                                width=30 height=30></TD>
+                                                        <TD
+                                                            style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px">
+                                                            <B>
+                                                                <FONT color=steelblue>Exámenes</FONT>
+                                                            </B> <BR>
+                                                        </TD>
+                                                    </TR>
+                                                </TBODY>
+                                            </TABLE>
+                                        </TD>
+                                        <TD
+                                            style="BORDER-TOP: silver 1px solid; BORDER-RIGHT: silver 1px solid; WIDTH: 33%; BORDER-BOTTOM: silver 1px solid; PADDING-LEFT: 10px; BORDER-LEFT: silver 1px solid; PADDING-RIGHT: 10px">
+                                            <H3>Coordinadores</H3>
+                                            <TABLE style="CURSOR: hand; WIDTH: 100%" cellSpacing=0>
+                                                <TBODY>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        
+                                                        onmousemove="this.style.backgroundColor='gainsboro'">
+
+                                                        <TD style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px"
+                                                            width=32><IMG src="/cygnus/otorgar numero de legajo.gif"
+                                                                width=32 height=32></TD>
+
+                                                        <TD
+                                                            style="PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px">
+                                                            <B>
+                                                                <FONT color=steelblue><a href="/views/designaciones.html">Designaciones </a></FONT> 
+                                                            </B><BR></TD>
+                                                    </TR>
+                                                    <TR onmouseleave="this.style.backgroundColor=''"
+                                                        
+                                                        onmousemove="this.style.backgroundColor='gainsboro'">
+                                    
+                                                    </TR>
+                                                </TBODY>
+                                            </TABLE>
+                                        </TD>
+                                    </TR>
+                                </TBODY>
+                            </TABLE>
+
+                <TR>
+
+
+                    <!-- FOOTER -->
+                    <TABLE style="WIDTH: 100%; BACKGROUND: #f5f5f5; MARGIN-TOP: 24px; COLOR: silver">
+                        <TBODY>
+                            <TR>
+                                <TD style="WIDTH: 80px; VERTICAL-ALIGN: middle"><A
+                                        href="http://www.aconcaguasf.com"><IMG src="/cygnus/logo_foot.gif" width=90
+                                            height=40></A></TD>
+                                <TD style="VERTICAL-ALIGN: middle" width=4></TD>
+                                <TD style="VERTICAL-ALIGN: middle"><IMG
+                                        style="VERTICAL-ALIGN: middle; MARGIN-RIGHT: 2px"
+                                        src="/cygnus/button_top.gif"><A style="FONT-WEIGHT: bold; COLOR: silver"
+                                        href="javascript:window.scroll(0);">top</A> | <A
+                                        style="FONT-WEIGHT: bold; COLOR: silver"
+                                        href="javascript:history.back();">back</A> | <A
+                                        style="FONT-WEIGHT: bold; COLOR: silver" href="http://www.solus.com.ar">home</A>
+                                    | <A style="FONT-WEIGHT: bold; COLOR: silver">site map</A> | <A
+                                        style="FONT-WEIGHT: bold; COLOR: silver"
+                                        href="mailto:soporte@aconcaguasf.com">support</A><BR>copyright © 2005-2009
+                                    <B>Aconcagua Software Factory S.A. Todos los derechos reservados.</B><BR>La
+                                    utilización de este sitio implica la aceptación del <A style="COLOR: silver"
+                                        href="/cygnus/legal/TOU.asp">condiciones de utilización</B>. </A></TD>
+                            </TR>
+                        </TBODY>
+                    </TABLE><!-- END FOOTER -->
+                    </TD>
+                </TR>
+            </TBODY>
+        </TABLE><!-- PLACE SCRIPT CODE BELOW THIS LINE !!! -->
+
+        </DIV>
+        </TR>
+        </TBODY>
+        </TABLE>
+    </BODY>
+
 </body>
 <script src="app.js"></script>
+
 </html>

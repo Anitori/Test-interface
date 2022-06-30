@@ -1,0 +1,252 @@
+<html>
+    <head>
+        <title>Administrar PreAlumnos</title>
+        <link rel="stylesheet" type="text/css" href="../../../styles/global.css">
+    </head>
+
+    <body>
+        <table cellspacing="0" style="height: 100%; width: 100%;">
+            <col style="width: 100%;">
+            <tr>
+                <td style="height: 50px; background: URL( '../../../images/bg_top.jpg' ) no-repeat 100% 0%;">
+                    <div style="width: 740px;">
+					
+
+<table style="height: 26px; width: 100%; background: steelblue; color: lightsteelblue;;" cellspacing="4">
+	<tbody>
+		<tr>
+			<td style="vertical-align: middle; text-align: left">
+
+				
+					<img src="/cygnus/images/menu_home.gif" style="VERTICAL-ALIGN: middle;">
+					<a href="../index.html"><font color="white"> &nbsp;home</font></a> 
+					&nbsp;
+					<a href="../index.html"><font color="white"> &nbsp;Tesorería</font></a> 
+					<a href="../index.html"><font color="white"> &nbsp;Nuevos Postulantes</font></a> 
+					<a href="../index.html"><font color="white"> &nbsp;Alumnado</font></a> 
+
+				
+				</div>
+				
+
+			</td>
+			
+			
+		</tr>
+		
+	</tbody>
+</table>
+
+<!-- main menu bar -->
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="vertical-align: top; padding-left: 10px;">
+                    <div id="printableArea" style="height: 100%; width: 100%;">
+<!-- PAGE CONTENTS BELOW -->
+<!-- **************************************************************************************************** -->
+
+<!-- header -->
+
+    <table style="height: 30px; width: 730px; margin-top: 6px; margin-bottom: 6px; border-bottom: 2px dotted silver;" cellspacing="0" cellpadding="0">
+       
+    </table>
+<!-- end header -->
+
+<!-- Messages & Notes -->
+
+<!-- Messages & Notes -->
+<table cellspacing="6" cellpadding="6" style="width: 100%;">
+	<colgroup>
+		<col style="width: 16px;">
+		<col>	
+	</colgroup>
+
+	<tbody style="vertical-align: top;">
+		
+	</tbody>
+</table>
+<!-- End Messages & Notes -->
+
+<!-- Listado de registros -->
+<form name="main" method="post" action="/cygnus/system/alumnado/cursado/cmd_InscripcionDefinitiva.asp">
+
+    <input type="hidden" name="behavior" value="load">
+    <input type="hidden" name="redirect" value="http%3A//10.1.1.50/cygnus/home/home%5Falumnos.asp" />
+
+    <input type="hidden" name="from" value="">
+    <input type="hidden" name="where" value="">
+    <input type="hidden" name="filter" value="">
+    <input type="hidden" name="filter_main" value="">
+    <input type="hidden" name="groupBy" value="">
+    <input type="hidden" name="orderBy" value="">
+
+    <input type="hidden" name="page" value="1">
+    <input type="hidden" name="pageSize" value="20">
+
+	<!--div class="dataentry"  style="width: 630px; margin-top: 6px; margin-bottom: 6px;">	    <h3>Criterios de búsqueda</h3>		<p>Seleccione los criterios que desee para filtrar la búsqueda.<br>Si desea todos los items de un criterio, dejar 'Seleccionar' o ningún valor en ese criterio.</p>	   <table>	        <colgroup>	            <col class="caption" style="width: 30%"/>	            <col class="code"  style="width: 70%"/>	        </colgroup>	        <tbody>				<tr>				    <td>Carrera<span class="required">(*)</span></td>				    <td colspan="2">						<select name="Planes_plaId">						</select>				    </td>				</td>				<tr>					<td>Ciclo<span class="required">(*)</span></td>					<td colspan="2">						<select name="Ciclo_cicId">						</select>					</td>				</tr>			</tbody>			<tfoot>				<tr>																	<td colspan="4" align="right">						<button type="submit" accesskey="a" id=button1 name=button1><u>a</u>ceptar</button>					</td>									</tr>			</tfoot>					</table>					</div-->
+	
+    <div style="width: 730px; margin:0px; padding: 0px;">
+        <!-- page selector -->
+        <!-- Begin page selector -->
+
+	
+
+<script language="javascript">
+function goToPage( iPage, iPageSize, oForm ) 
+{
+	
+	if( event.keyCode != 0 );
+		event.returnValue	= 0;
+
+	if( iPage.toString() != "" )
+		if( isFinite( iPage ) && iPage >= 0 && iPage <= 1 )
+		{
+			oForm.pageSize.value = iPageSize;
+			oForm.page.value = iPage;
+			oForm.submit();
+		}
+		else
+		{
+			alert( "ERROR: La página seleccionada no es válida!" );
+		}
+}
+
+	</script>
+
+</script>
+
+<!-- end page selector -->
+    </div>
+
+    <table class="grid" cellspacing="0" cellpadding="0" style="width: 100%;">
+        <colgroup> <col style="width: 12px" /> </colgroup>
+        <thead>
+            <tr>
+                <th> <span> Nombre</span></th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=25910,turId=6,plaId=10" /></td>
+   <td nowrap><span class="mimic">ABOGACÍA</span></td>
+   
+ 
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=22987,turId=1,plaId=10" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=22987' );">CONTADOR PÚBLICO</span></td>
+   
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=30531,turId=1,plaId=10" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=30531' );">PSICOLOGÍA</span></td>
+   
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=25076,turId=1,plaId=10" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=25076' );">PSICOPEDAGOGÍA</span></td>
+  
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=37544,turId=1,plaId=19" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=37544' );">CIENCIAS DE LA EDUCACIÓN</span></td>
+  
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=37444,turId=5,plaId=71" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=37444' );">TECNICATURA UNIVERSITARIA EN RADIOLOGÍA</span></td>
+ 
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=25924,turId=2,plaId=39" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=25924' );">TECNICATURA UNIVERSITARIA EN INSTRUMENTACIÓN QUIRÚRGICA</span></td>
+ 
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=25181,turId=2,plaId=39" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=25181' );">LIC. EN PRODUCCIÓN DE BIO-IMÁGENES</span></td>
+ 
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=25926,turId=2,plaId=39" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=25926' );">LIC. EN INSTRUMENTACIÓN QUIRÚRGICA </span></td>
+ 
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=25187,turId=2,plaId=39" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=25187' );">LIC. EN ADMINISTRACIÓN</span></td>
+  
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=23110,turId=2,plaId=40" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=23110' );">LIC. EN COMERCIO EXTERIOR</span></td>
+   
+</tr>
+<tr>
+   <td nowrap><input class="noBorder" type="checkbox" name="Cursado_Key" value="aluId=23346,turId=2,plaId=40" /></td>
+   <td nowrap><span class="mimic" onclick="Alumno_main( 'show', document.main, 'aluId=23346' );">TECNICATURA UNIVERSITARIA EN ACOMPAÑANTE TERAPEUTICO </span></td>
+  
+</tr>
+
+            <!-- End database list -->
+        </tbody>
+    </table>
+
+</form>
+	<script language="javascript">
+			document.getElementById("filter_text").focus();
+	</script>
+
+
+<!-- DON'T PLACE CONTENTS BELOW THIS LINE !!!! -->
+<!-- ***************************************** -->
+                        </div>
+                    </td>
+                </tr>
+<!-- Footer Container -->
+                <tr>
+                    <td style="height: 48px; vertical-align: bottom;">
+                    <!-- FOOTER -->
+                    <!-- Page Footer -->
+<table style="width: 100%; margin-top: 24px; color: silver; background: #f5f5f5;">
+	<tbody>
+		<tr>
+			<td style="width: 80px; vertical-align: middle;"><a href="http://www.aconcaguasf.com"><img src="/cygnus/images/logo_foot.gif" WIDTH="90" HEIGHT="40"></a></td>
+			<td width="4" style="vertical-align: middle;"></td>
+			<td style="vertical-align: middle;">
+				<img src="/cygnus/images/button_top.gif" style="vertical-align: middle; margin-right: 2px;" /><a href="javascript:window.scroll(0);" style="color: silver; font-weight: bold;">top</a> | 
+				<a href="javascript:history.back();" style="color: silver; font-weight: bold;">back</a> | 
+				<a href="http://www.solus.com.ar" style="color: silver; font-weight: bold;">home</a> | 
+				<a href style="color: silver; font-weight: bold;">site map</a> | 
+				<a href="mailto:soporte@aconcaguasf.com" style="color: silver; font-weight: bold;">support</a><br>
+
+			copyright © 2005-2009 <b>Aconcagua Software Factory S.A. Todos los derechos reservados.</b><br>
+			La utilización de este sitio implica la aceptación del <a href="/cygnus/legal/TOU.asp" style="color: silver;">condiciones de utilización</b>.
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+                    <!-- END FOOTER -->
+                    </td>
+                </tr>
+<!-- End Footer Container -->
+
+        </table>
+<!-- End Main Container -->
+
+    </body>
+
+<!-- PLACE SCRIPT CODE BELOW THIS LINE !!! -->
+
+
+
+<!-- There you go... -->
+
+</html>
