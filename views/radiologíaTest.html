@@ -33,7 +33,6 @@
             var dni=document.getElementById("dni").value;
             var observaciones=document.getElementById("observaciones").value;
             var comision=document.getElementById("comision").value;
-            var date=document.getElementById("date").value;
      
             // La variable cont, genera un id unico para cada contacto
             // Este id es el utilizado para eliminar-lo
@@ -74,8 +73,6 @@
                 var td9 = document.createElement("TD");
                 td9.appendChild(crearButton(count));
 
-                var td10 = document.createElement("TD");
-                td10.appendChild(crearButton(date));
 
      
                 var row = document.createElement("TR");
@@ -89,7 +86,7 @@
                 row.appendChild(td7);
                 row.appendChild(td8);
                 row.appendChild(td9);
-                row.appendChild(td10);
+
                 tbody.appendChild(row);
             }
      
@@ -301,7 +298,8 @@
               <td class="tab1"></td>
               <td class="tab1"></td>
               <td class="tab1">Fecha:</td> 
-              <td class="tab1"> 
+              <td class="tab1"></td>
+              <td class="tab1">
                 <div id="current_date"></p>
                   <script>
                   date = new Date();
@@ -309,9 +307,8 @@
                   month = date.getMonth() + 1;
                   day = date.getDate();
                   document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
-                  </script>   
+                  </script>
               </td>
-              <td class="tab1"><input type="date" id="date"></td>
             </tr class="tab">
 
               <tr>

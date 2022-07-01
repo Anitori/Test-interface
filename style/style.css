@@ -1,5 +1,7 @@
 
-
+body{
+    font-family: nunito;
+}
 #padre{
     display: flex;
 }
@@ -41,6 +43,49 @@ select{
     border-bottom: solid 1px black;
   
 }
+
+#nombre{
+    border: solid 1px black;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+
+#tableCarreras{
+
+    font-weight: bold;
+    padding-left: 25px;
+    
+}
+
+#careers{
+    font-weight: bold;
+    font-size: 25px;
+
+    margin: 10px 0px 10px 20px;
+    border-bottom: 1px solid rgba(57, 45, 45, 0.38);
+}
+
+.grid{
+    border: solid 2px black;
+    padding: 30px;
+}
+.mimic{
+    margin-top: 20px;
+}
+
+#ul{
+    font-weight: bold;
+
+}
+
+li{
+    margin-top: 10px;
+    padding: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
 
 
 
