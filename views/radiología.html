@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ese">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADIOLOGÍA</title>
+    <link href="/style/style.css" rel="stylesheet">
+
+
+    <script>
+        var count=0;
+     
+        let profesores = []
+
+        let profesores1 = JSON.parse(localStorage.getItem(`profesores`))
+
+      
+
+
+
+        /* función para agregar valores a la tabla   */
+
+        function agregarValores(){
+
+            // agarro los valores del formulario
+            var nombre=document.getElementById("Asignatura").value;
+            var apellidos=document.getElementById("docente").value;
+            var correo=document.getElementById("cargo").value;
+            var modalidad=document.getElementById("modalidad").value;
+            var horas=document.getElementById("horas").value;
+            var dni=document.getElementById("dni").value;
+            var observaciones=document.getElementById("observaciones").value;
+            var comision=document.getElementById("comision").value;
+     
+            // La variable cont, genera un id unico para cada contacto
+            // Este id es el utilizado para eliminar-lo
+            count++;
+     
+            if(nombre.length>0 || apellidos.length>0)
+            {
+                var tbody = document.getElementById("miTabla").getElementsByTagName("TBODY")[0];
+     
+                var attrId = document.createAttribute('id');
+                attrId.value=count;
+     
+                var td1 = document.createElement("TD");
+                td1.appendChild(document.createTextNode(nombre));
+
+                var td2 = document.createElement("TD");
+                td2.appendChild(document.createTextNode(apellidos));
+
+                var td3 = document.createElement("TD");
+                td3.appendChild(document.createTextNode(correo));
+
+                var td4 = document.createElement("TD");
+                td4.appendChild(document.createTextNode(modalidad));
+
+                var td5 = document.createElement("TD");
+                td5.appendChild(document.createTextNode(horas));
+
+                var td6 = document.createElement("TD");
+                td6.appendChild(document.createTextNode(dni));
+
+                var td7 = document.createElement("TD");
+                td7.appendChild(document.createTextNode(observaciones));
+
+                var td8 = document.createElement("TD");
+                td8.appendChild(document.createTextNode(comision));
+
+
+                var td9 = document.createElement("TD");
+                td9.appendChild(crearButton(count));
+     
+                var row = document.createElement("TR");
+                row.setAttributeNode(attrId);
+                row.appendChild(td1);
+                row.appendChild(td2);
+                row.appendChild(td3);
+                row.appendChild(td4);
+                row.appendChild(td5);
+                row.appendChild(td6);
+                row.appendChild(td7);
+                row.appendChild(td8);
+                row.appendChild(td9);
+                tbody.appendChild(row);
+
+                localStorage.setItem(`profesores`,JSON.stringify(profesores)) // VER
+            }
+     
+            // Eliminamos los valores del formulario
+            document.getElementById("Asignatura").value="";
+            document.getElementById("docente").value="";
+            document.getElementById("cargo").value="";
+            document.getElementById("modalidad").value="";
+            document.getElementById("horas").value="";
+            document.getElementById("dni").value="";
+            document.getElementById("observaciones").value="";
+            document.getElementById("comision").value="";
+
+        }
+     
+        /* Función para eliminar un valor de la tabla*/
+        function eliminarValor(id)
+        {
+            window.confirm("¿Desea usted confirmar su acción?");
+            var row = document.getElementById(id);
+            row.parentNode.removeChild(row);
+        }
+     
+        /** Función que crea el boton de eliminar
+         ** Tiene que recibie el id a eliminar
+         */
+        function crearButton(id)
+        {
+            var button=document.createElement("input");
+            var attrType=document.createAttribute('type');
+            attrType.value="button";
+            var attrValue=document.createAttribute('value');
+            attrValue.value="Eliminar";
+            var attrOnclick=document.createAttribute('onclick');
+            attrOnclick.value="eliminarValor("+count+");";
+     
+            button.setAttributeNode(attrType);
+            button.setAttributeNode(attrValue);
+            button.setAttributeNode(attrOnclick);
+     
+            return button;
+        }
+        </script>
+
+<style>
+	#miTabla {border:1px solid #ddd;padding: 10px;}
+	#miTabla thead tr td {font-weight:bold;padding:10px;}
+	#miTabla tbody tr:nth-child(odd) {background-color:#f8f8f8;}
+	#miTabla td {padding:5px;}
+ 
+	form {width:300px;text-align:center;}
+	form label {display:inline-block;width:100px;text-align:right;}
+	</style>
+</head>
+<body>
+    <table style="height: 26px; width: 100%; background: steelblue; color: lightsteelblue;;" cellspacing="4">
+        <tbody>
+            <tr>
+                <td style="vertical-align: middle; text-align: left">
+                        <img src="/cygnus/images/menu_home.gif" style="VERTICAL-ALIGN: middle;">
+                        <a href="../index.html"><font color="white"> &nbsp;home</font></a> 
+                        &nbsp;
+                        <a href="../index.html"><font color="white"> &nbsp;Tesorería</font></a> 
+                        <a href="../index.html"><font color="white"> &nbsp;Nuevos Postulantes</font></a> 
+                        <a href="../index.html"><font color="white"> &nbsp;Alumnado</font></a> 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<div class="padreContainer">  
+<section id="mainContainer0"> asdasd </section>
+        <!-- /////////// -->
+<div id="mainContainer">
+       
+         
+        <!-- Formulario de adición  -->
+
+            <form id="form1">
+               
+                <label>Asignatura:</label>
+                <select name="Ciclo-lectivo" id="Asignatura" class="selects">
+                    <option value="SALUD PÚBLICA" >Salud Pública</option>
+                    <option value="FUNDAMENTOS DE LA RADIOLOGÍA" >Fundamentos de la Radiología</option>
+                    <option value="MATEMÁTICA" >Matemática</option>
+                    <option value="ASPECTOS PSICO-SOCIO CULTURALES DEL DESARROLLO" > Aspectos Psico-Socio Culturales del Desarrollo</option>
+                    <option value="MORFOFISIOLOGÍA DINÁMICA" >Morfofisiología Dinámica</option>
+                    <option value="BASES FÍSICO QUÍMICAS" >Bases Físico Químicas</option>
+                    <option value="INFORMÁTICA I" >Informática I</option>
+                    <option value="MICROBIOLOGÍA, PARASITOLOGÍA E INMUNOLOGÍA" >Microbiología, Parasitología e Inmunología</option>
+                    <option value="COMUNICACIÓN" >Comunicación</option>
+                    <option value="PROBLEMÁTICA PSICO-SOCIO CULTURAL" >Problemática Psico-Socio Cultural</option>
+                    <option value="PRÁCTICAS PRE-PROFESIONALES" >Prácticas Pre-Profesionales</option>
+                    <option value="ATENCIÓN AL PACIENTE" >Atención al Paciente</option>
+                    <option value="TÉCNICAS RADIOLÓGICAS I" >Técnicas Radiológicas I</option>
+                    <option value="INGLÉS TÉCNICO" >Inglés Técnico</option>
+                    <option value="INFORMÁTICA II" >Informática II</option>
+                    <option value="TÉCNICAS RADIOLÓGICAS II" >Técnicas Radiologícas I</option>
+                    <option value="ÉTICA Y DEONTOLOGÍA PROFESIONAL" >Ética y Deontología Profesional</option>
+                    <option value="PRÁCTICAS PROFESIONALIZANTES I" >Prácticas Profesionalizantes I</option>
+                    <option value="TÉCNICAS RADIOLÓGICAS III" >Técnicas Radiológicas III</option>
+                    <option value="GESTIÓN DE LA SALUD" >Gestión de la Salud</option>
+                    <option value="PRÁCTICA PROFESIONALIZANTE II" >Práctica Profesionalizante II</option>
+                    <option value="TRABAJO FINAL DE PREGRADO" >Trabajo Final de Pregrado</option>
+                </select>
+                
+                <label></label>
+                
+                <label>Docente:</label> 
+                <input type="text" id="docente">
+
+                <label>Cargo:</label>
+                <input type="text" id="cargo">
+
+                <label>Modalidad:</label> 
+                <input type="text" id="modalidad">
+
+                <label>Horas:</label>
+                <input type="text" id="horas">
+
+                <label>D.N.I:</label> 
+                <input type="text" id="dni">
+
+                <label>Observaciones:</label>
+                <input type="text" id="observaciones">
+
+                <label>Comisión:</label> 
+                <input type="text" id="comision">
+                <p>
+                    <input type="button" onclick="agregarValores();" value="Agregar">
+                </p>
+            </form>
+      
+
+        <table id="miTabla">
+            <thead>
+                <tr>
+                    <td>ASIGNATURA</td>
+                    <td>DOCENTE</td>
+                    <td>CARGO</td>
+                    <td>MODALIDAD</td>
+                    <td>HORAS</td>
+                    <td>D.N.I</td>
+                    <td>OBSERVACIONES</td>
+                    <td>COMISIÓN</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+    <table style="width: 100%; margin-top: 24px; color: silver; background: #f5f5f5;">
+        <tbody>
+            <tr>
+                <td style="width: 80px; vertical-align: middle;"><a href="http://www.aconcaguasf.com"><img src="/cygnus/logo_foot.gif" WIDTH="90" HEIGHT="40"></a></td>
+                <td width="4" style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;">
+                    <img src="/cygnus/button_top.gif" style="vertical-align: middle; margin-right: 2px;" /><a href="javascript:window.scroll(0);" style="color: silver; font-weight: bold;">top</a> | 
+                    <a href="javascript:history.back();" style="color: silver; font-weight: bold;">back</a> | 
+                    <a href="http://www.solus.com.ar" style="color: silver; font-weight: bold;">home</a> | 
+                    <a href style="color: silver; font-weight: bold;">site map</a> | 
+                    <a href="mailto:soporte@aconcaguasf.com" style="color: silver; font-weight: bold;">support</a><br>
+    
+                copyright © 2005-2009 <b>Aconcagua Software Factory S.A. Todos los derechos reservados.</b><br>
+                La utilización de este sitio implica la aceptación del <a href="/cygnus/legal/TOU.asp" style="color: silver;">condiciones de utilización</b>.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

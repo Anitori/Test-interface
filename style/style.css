@@ -1,0 +1,50 @@
+
+
+#padre{
+    display: flex;
+}
+
+#form0{
+    border: solid 1px black;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+select{
+    margin-top: 10px;
+}
+
+
+#Asignatura{
+    width: 192px;
+}
+
+#docente, #cargo, #modalidad, #horas, #dni, #observaciones, #comision, #Asignatura, #asignatura{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#form1{
+    margin-top: 100px;
+}
+
+.tab{
+   border-bottom: solid 1px black;
+   border-top: solid 1px black;
+   border: 1px solid black;
+}
+
+.tab1{
+    border-bottom: solid 1px black;
+  
+}
+
+
+
+
+
+
+
